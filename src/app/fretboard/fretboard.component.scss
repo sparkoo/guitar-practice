@@ -1,0 +1,93 @@
+.fretboard {
+  background: burlywood;
+  padding: 0;
+  margin: 0;
+  border-bottom: 3px solid gray;
+}
+
+.fret {
+  border-top: 3px solid gray;
+  height: 3rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.finger {
+  position: absolute;
+  z-index: 100;
+  width: 20px;
+  height: 20px;
+  background: lightgray;
+  top: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  text-align: center;
+  padding: 0;
+  line-height: 1;
+  border-radius: 20px;
+  font-weight: bold;
+  border: 1px solid #333;
+}
+
+.stringline {
+  position: absolute;
+  height: 3rem;
+  background: dimgray;
+  top: 0;
+  //z-index: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.E {
+  left: 2%;
+}
+
+.a {
+  left: 21.2%;
+}
+
+.d {
+  left: 40.4%;
+}
+
+.g {
+  left: 59.6%;
+}
+
+.b {
+  left: 78.8%;
+}
+
+.e {
+  left: 98%;
+}
+
+
+.stringline.E {
+  width: 4px;
+}
+
+.stringline.a {
+  width: 3px;
+}
+
+.stringline.d {
+  width: 3px;
+}
+
+.stringline.g {
+  width: 2px;
+}
+
+.stringline.b {
+  width: 2px;
+}
+
+.stringline.e {
+  width: 1px;
+}
+
+
