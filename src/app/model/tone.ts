@@ -7,3 +7,7 @@ export enum Tone {
   Fflat, F, Fsharp,
   Gflat, G, Gsharp
 }
+
+export enum ToneUp {
+  A, Asharp, B, C, Csharp, D, Dsharp, E, F, Fsharp, G, Gsharp
+}
