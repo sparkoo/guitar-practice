@@ -1,3 +1,19 @@
 <div class="container">
-  <app-fretboard [position]="dbService.get()"></app-fretboard>
+  <div class="row">
+    <div class="col-md-2">
+      <app-fretboard [shape]="getOctaveShape('C_1')"></app-fretboard>
+    </div>
+    <div class="col-md-2">
+      <app-fretboard [shape]="getOctaveShape('C_2')"></app-fretboard>
+    </div>
+    <div class="col-md-2">
+      <app-fretboard [shape]="getOctaveShape('C_3')"></app-fretboard>
+    </div>
+    <div class="col-md-2">
+      <app-fretboard [shape]="getOctaveShape('C_4')"></app-fretboard>
+    </div>
+    <div class="col-md-2">
+      <app-fretboard [shape]="getOctaveShape('C_5')"></app-fretboard>
+    </div>
+  </div>
 </div>

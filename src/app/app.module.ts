@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FretboardComponent } from './fretboard/fretboard.component';
-import { DbService } from './db.service';
+import { DbService } from './db/db.service';
+import { OctaveShapesService } from './db/octave-shapes.service';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { DbService } from './db.service';
   imports: [
     BrowserModule
   ],
-  providers: [DbService],
+  providers: [DbService, OctaveShapesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { DbService } from './db.service';
+import { DbService } from './db/db.service';
+import { Type } from './model/type';
+import { Tone } from './model/tone';
+import { Shape } from './model/shape';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +14,13 @@ export class AppComponent {
 
   constructor(public dbService: DbService) {
 
+  }
+
+  query(): Shape {
+    return this.dbService.query({ type: Type.OCTAVE, tone: Tone.C, shape: 2 });
+  }
+
+  getOctaveShape(key: string): Shape {
+    return this.dbService.getOctaveShape(key);
   }
 }
