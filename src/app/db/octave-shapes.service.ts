@@ -5,11 +5,11 @@ import { Shape } from '../model/shape';
 @Injectable()
 export class OctaveShapesService {
   private data = {
-    'C_1': { frets: 6, base: 0, fingers: { 1: ['b'], 4: ['a'] } },
+    'C_1': { frets: 6, base: 0, fingers: { 1: ['b'], 3: ['a'] } },
     'C_2': { frets: 6, base: 2, fingers: { 1: ['a'], 3: ['g'] } },
     'C_3': { frets: 6, base: 4, fingers: { 1: ['g'], 4: ['e', 'E'] } },
-    'C_4': { frets: 6, base: 6, fingers: { 1: ['e', 'E'], 3: ['d'] } },
-    'C_5': { frets: 6, base: 8, fingers: { 1: ['d'], 4: ['b'] } },
+    'C_4': { frets: 6, base: 7, fingers: { 1: ['e', 'E'], 3: ['d'] } },
+    'C_5': { frets: 6, base: 9, fingers: { 1: ['d'], 4: ['b'] } },
   };
 
   constructor() { }
