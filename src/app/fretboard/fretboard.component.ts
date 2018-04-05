@@ -14,7 +14,7 @@ export class FretboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.loopNumbers = Array(this.position.frets).fill(1).map((x, i) => i);
+    this.loopNumbers = Array(this.position.frets - 1).fill(1).map((x, i) => i + 1);
   }
 
 }
