@@ -1,13 +1,12 @@
-<div class="row">
-  <div class="fretboard col-md-2">
-    <div class="fret" *ngFor="let i of loopNumbers">
-      <div class="stringline E"></div>
-      <div class="stringline a"></div>
-      <div class="stringline d"></div>
-      <div class="stringline g"></div>
-      <div class="stringline b"></div>
-      <div class="stringline e"></div>
-      <div class="finger" [ngClass]="f" *ngFor="let f of position.fingers[i]"></div>
-    </div>
+<div class="fretboard">
+  <div class="base">{{shape.base}}</div>
+  <div class="fret" *ngFor="let i of loopNumbers">
+    <div class="stringline E"></div>
+    <div class="stringline a"></div>
+    <div class="stringline d"></div>
+    <div class="stringline g"></div>
+    <div class="stringline b"></div>
+    <div class="stringline e"></div>
+    <div class="finger" [ngClass]="f" *ngFor="let f of shape.fingers[i]"></div>
   </div>
 </div>

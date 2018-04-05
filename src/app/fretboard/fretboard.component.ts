@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Position } from '../position.model';
+import { Shape } from '../model/shape';
 
 @Component({
   selector: 'app-fretboard',
@@ -9,12 +9,13 @@ import { Position } from '../position.model';
 export class FretboardComponent implements OnInit {
   loopNumbers = [];
 
-  @Input() position: Position;
+  @Input() shape: Shape;
 
   constructor() { }
 
   ngOnInit() {
-    this.loopNumbers = Array(this.position.frets - 1).fill(1).map((x, i) => i + 1);
+    this.loopNumbers = Array(this.shape.frets - 1).fill(1).map((x, i) => i + 1);
+    console.log('drawing shape: ', this.shape);
   }
 
 }
