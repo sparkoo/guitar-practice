@@ -33,6 +33,11 @@ export class OctaveShapesService {
       'Csharp_3': { frets: 6, base: 5, fingers: this.fingers[3] },
       'Csharp_4': { frets: 6, base: 8, fingers: this.fingers[4] },
       'Csharp_5': { frets: 6, base: 10, fingers: this.fingers[5] },
+      'D_1': { frets: 6, base: 2, fingers: this.fingers[1] },
+      'D_2': { frets: 6, base: 4, fingers: this.fingers[2] },
+      'D_3': { frets: 6, base: 5, fingers: this.fingers[3] },
+      'D_4': { frets: 6, base: 9, fingers: this.fingers[4] },
+      'D_5': { frets: 6, base: 11, fingers: this.fingers[5] },
     };
   }
 
