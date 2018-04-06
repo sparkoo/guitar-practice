@@ -3,16 +3,21 @@ import { Shape } from '../model/shape';
 import { ShapeGen } from './shapegen';
 
 export abstract class DbServiceBase implements DbServiceInterface {
-  readonly frets = 5;
-  readonly data = {};
-  readonly fingers = [];
+  private readonly data = {};
+  private readonly fingers = [];
 
-  protected constructor() {
+  protected constructor(frets: number) {
     this.fingers = this.initFingers();
-    this.data = ShapeGen.generateShapes(this.fingers, this.frets);
+    this.data = ShapeGen.generateShapes(this.fingers, frets);
   }
 
-  abstract initFingers(): [any];
+  protected queryData(key: string): Shape {
+    return this.data[key];
+  }
+
+  abstract initFingers(): any[];
+
   abstract get(key: string): Shape;
+
   abstract query(query: any): Shape;
 }

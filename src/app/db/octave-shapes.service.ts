@@ -6,10 +6,10 @@ import { DbServiceBase } from './db-service-base';
 @Injectable()
 export class OctaveShapesService extends DbServiceBase {
   constructor() {
-    super();
+    super(5);
   }
 
-  initFingers() {
+  initFingers(): any[] {
     const fingers = [];
     fingers[0] = { 1: ['b'], 3: ['a'] };
     fingers[1] = { 1: ['a'], 3: ['g'] };
@@ -21,10 +21,10 @@ export class OctaveShapesService extends DbServiceBase {
 
   query(query: { 'tone': Tone, 'shape': number }): Shape {
     const queryString = `${Tone[query.tone]}_${query.shape}`;
-    return this.data[queryString];
+    return this.queryData(queryString);
   }
 
   get(query: string): Shape {
-    return this.data[query];
+    return this.queryData(query);
   }
 }
