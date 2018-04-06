@@ -16,10 +16,6 @@ export class AppComponent {
 
   }
 
-  query(): Shape {
-    return this.dbService.query({ type: Type.OCTAVE, tone: Tone.C, shape: 2 });
-  }
-
   getOctaveShape(key: string): Shape {
     return this.dbService.getOctaveShape(key);
   }

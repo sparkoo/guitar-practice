@@ -40,7 +40,7 @@ export class OctaveShapesService extends DbServiceBase {
     return data;
   }
 
-  query(query: { 'tone': Tone, 'shape': number }): Shape {
+  query(query: { tone: Tone, shape: number }): Shape {
     const queryString = `${Tone[query.tone]}_${query.shape}`;
     return this.queryData(queryString);
   }

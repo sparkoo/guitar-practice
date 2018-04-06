@@ -11,3 +11,7 @@ export enum Tone {
 export enum ToneUp {
   C, Csharp, D, Dsharp, E, F, Fsharp, G, Gsharp, A, Asharp, B,
 }
+
+export enum Tonality {
+  MAJOR, MINOR
+}

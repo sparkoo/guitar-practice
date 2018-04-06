@@ -10,12 +10,8 @@ export class DbService {
   constructor(private octaveShapesService: OctaveShapesService,
               private chordService: ChordsService) { }
 
-  get(): Shape {
-    return { frets: 6, base: 0, fingers: { 0: ['g', 'e'], 1: ['b'], 3: ['d'], 4: ['a'] } };
-  }
-
   query(query: Query): Shape {
-    return this.octaveShapesService.query({tone: query.tone, shape: query.shape});
+    return undefined;
   }
 
   getOctaveShape(key: string): Shape {
