@@ -23,4 +23,8 @@ export class AppComponent {
   getOctaveShape(key: string): Shape {
     return this.dbService.getOctaveShape(key);
   }
+
+  getChord(key: string): Shape {
+    return this.dbService.getChord(key);
+  }
 }
