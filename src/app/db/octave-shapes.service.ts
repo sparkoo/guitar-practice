@@ -1,26 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Tone } from '../model/tone';
 import { Shape } from '../model/shape';
-import { ShapeGen } from './shapegen';
-import { DbServiceInterface } from './db-interface';
+import { DbServiceBase } from './db-service-base';
 
 @Injectable()
-export class OctaveShapesService implements DbServiceInterface {
-  private readonly frets = 5;
-  private readonly data = {};
-  private fingers = [];
-
+export class OctaveShapesService extends DbServiceBase {
   constructor() {
-    this.initFingers();
-    this.data = ShapeGen.generateShapes(this.fingers, this.frets);
+    super();
   }
 
-  private initFingers() {
-    this.fingers[0] = { 1: ['b'], 3: ['a'] };
-    this.fingers[1] = { 1: ['a'], 3: ['g'] };
-    this.fingers[2] = { 1: ['g'], 4: ['e', 'E'] };
-    this.fingers[3] = { 1: ['e', 'E'], 3: ['d'] };
-    this.fingers[4] = { 1: ['d'], 4: ['b'] };
+  initFingers() {
+    const fingers = [];
+    fingers[0] = { 1: ['b'], 3: ['a'] };
+    fingers[1] = { 1: ['a'], 3: ['g'] };
+    fingers[2] = { 1: ['g'], 4: ['e', 'E'] };
+    fingers[3] = { 1: ['e', 'E'], 3: ['d'] };
+    fingers[4] = { 1: ['d'], 4: ['b'] };
+    return fingers;
   }
 
   query(query: { 'tone': Tone, 'shape': number }): Shape {
