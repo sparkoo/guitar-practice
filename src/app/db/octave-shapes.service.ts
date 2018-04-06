@@ -13,7 +13,7 @@ export class OctaveShapesService extends DbServiceBase {
     super(5);
   }
 
-  initFingers(): any[] {
+  private static initFingers(): any[] {
     const fingers = [];
     fingers[0] = { 1: ['b'], 3: ['a'] };
     fingers[1] = { 1: ['a'], 3: ['g'] };
@@ -23,9 +23,10 @@ export class OctaveShapesService extends DbServiceBase {
     return fingers;
   }
 
-  generateShapes(fingers: Array<any>, frets: number): {} {
+  generateShapes(frets: number): {} {
     const data = {};
     const CBases = [0, 2, 4, 7, 9];
+    const fingers = OctaveShapesService.initFingers();
     Object.keys(ToneUp).filter(t => typeof ToneUp[t] === 'number').forEach((t, ti) => {
       for (let p = 0; p < 5; p++) {
         const shapeName = `${t}_${p + 1}`;
@@ -42,9 +43,5 @@ export class OctaveShapesService extends DbServiceBase {
   query(query: { 'tone': Tone, 'shape': number }): Shape {
     const queryString = `${Tone[query.tone]}_${query.shape}`;
     return this.queryData(queryString);
-  }
-
-  get(query: string): Shape {
-    return this.queryData(query);
   }
 }
