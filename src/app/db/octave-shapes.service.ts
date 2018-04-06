@@ -20,18 +20,11 @@ export class OctaveShapesService extends DbServiceBase {
   }
 
   query(query: { 'tone': Tone, 'shape': number }): Shape {
-    // console.log('query octave shape: ', query);
-    const queryString = Tone[query.tone] + '_' + query.shape;
-    // console.log('searching key: ', queryString);
-    const shape = this.data[queryString];
-    // console.log('found shape: ', shape);
-    return shape;
+    const queryString = `${Tone[query.tone]}_${query.shape}`;
+    return this.data[queryString];
   }
 
   get(query: string): Shape {
-    // console.log('get octave shape: ', query);
-    const shape = this.data[query];
-    // console.log('found shape: ', shape);
-    return shape;
+    return this.data[query];
   }
 }
