@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Tone, ToneUp } from '../model/tone';
+import { Tone} from '../model/tone';
 import { Shape } from '../model/shape';
+import { ShapeGen } from './shapegen';
 
 @Injectable()
 export class OctaveShapesService {
   private readonly frets = 5;
-  private data = {};
+  private readonly data = {};
   private fingers = [];
 
   constructor() {
     this.initFingers();
-    this.initData();
+    this.data = ShapeGen.generateShapes(this.fingers, this.frets);
   }
 
   private initFingers() {
@@ -19,20 +20,6 @@ export class OctaveShapesService {
     this.fingers[2] = { 1: ['g'], 4: ['e', 'E'] };
     this.fingers[3] = { 1: ['e', 'E'], 3: ['d'] };
     this.fingers[4] = { 1: ['d'], 4: ['b'] };
-  }
-
-  private initData() {
-    const Cbases = [0, 2, 4, 7, 9];
-    Object.keys(ToneUp).filter(t => typeof ToneUp[t] === 'number').forEach((t, ti) => {
-      for (let p = 0; p < 5; p++) {
-        const shapeName = `${t}_${p + 1}`;
-        this.data[shapeName] = {
-          frets: this.frets,
-          base: (Cbases[p] + ti) % 12,
-          fingers: this.fingers[p]
-        };
-      }
-    });
   }
 
   query(query: { 'tone': Tone, 'shape': number }): Shape {
