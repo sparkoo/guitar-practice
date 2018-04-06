@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Tone} from '../model/tone';
+import { Tone } from '../model/tone';
 import { Shape } from '../model/shape';
 import { ShapeGen } from './shapegen';
+import { DbServiceInterface } from './db-interface';
 
 @Injectable()
-export class OctaveShapesService {
+export class OctaveShapesService implements DbServiceInterface {
   private readonly frets = 5;
   private readonly data = {};
   private fingers = [];
