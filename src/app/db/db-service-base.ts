@@ -1,14 +1,13 @@
 import { DbServiceInterface } from './db-interface';
 import { Shape } from '../model/shape';
-import { ShapeGen } from './shapegen';
 
 export abstract class DbServiceBase implements DbServiceInterface {
-  private readonly data = {};
+  protected readonly data = {};
   private readonly fingers = [];
 
   protected constructor(frets: number) {
     this.fingers = this.initFingers();
-    this.data = ShapeGen.generateShapes(this.fingers, frets);
+    this.data = this.generateShapes(this.fingers, frets);
   }
 
   protected queryData(key: string): Shape {
@@ -16,6 +15,8 @@ export abstract class DbServiceBase implements DbServiceInterface {
   }
 
   abstract initFingers(): any[];
+
+  abstract generateShapes(fingers: Array<any>, frets: number): {};
 
   abstract get(key: string): Shape;
 

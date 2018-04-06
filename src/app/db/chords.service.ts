@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { Shape } from '../model/shape';
 import { DbServiceBase } from './db-service-base';
 
+/**
+ * query keys are in format
+ * `tone_maj/min_position` -> 'A_maj_3', 'Csharp_min_1'
+ */
 @Injectable()
 export class ChordsService extends DbServiceBase {
   constructor() {
@@ -16,6 +20,10 @@ export class ChordsService extends DbServiceBase {
     fingers[3] = { 1: ['e', 'E'], 3: ['d'] };
     fingers[4] = { 1: ['d'], 4: ['b'] };
     return fingers;
+  }
+
+  generateShapes(fingers: Array<any>, frets: number): {} {
+    return undefined;
   }
 
   get(key: string): Shape {
