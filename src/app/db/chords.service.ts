@@ -15,21 +15,21 @@ export class ChordsService extends DbServiceBase {
 
   private static initMajorFingers(): any[] {
     const fingers = [];
-    fingers[0] = { 1: ['b'], 3: ['a'] };
-    fingers[1] = { 1: ['a'], 3: ['g'] };
-    fingers[2] = { 1: ['g'], 4: ['e', 'E'] };
-    fingers[3] = { 1: ['e', 'E'], 3: ['d'] };
-    fingers[4] = { 1: ['d'], 4: ['b'] };
+    fingers[0] = { 0: ['g', 'e'], 1: ['b'], 2: ['d'], 3: ['a'] };
+    fingers[1] = { 1: ['a', 'e'], 3: ['d', 'g', 'b'] };
+    fingers[2] = { 1: ['d', 'g', 'b'], 3: ['a'], 4: ['E'] };
+    fingers[3] = { 1: ['e', 'E', 'b'], 2: ['g'], 3: ['d', 'a'] };
+    fingers[4] = { 1: ['d'], 3: ['g', 'e'], 4: ['b'] };
     return fingers;
   }
 
   private static initMinorFingers(): any[] {
     const fingers = [];
-    fingers[0] = { 1: ['b'], 3: ['a'] };
-    fingers[1] = { 1: ['a'], 3: ['g'] };
-    fingers[2] = { 1: ['g'], 4: ['e', 'E'] };
-    fingers[3] = { 1: ['e', 'E'], 3: ['d'] };
-    fingers[4] = { 1: ['d'], 4: ['b'] };
+    fingers[0] = { 0: ['g', 'e'], 1: ['b', 'd'], 3: ['a'] };
+    fingers[1] = { 1: ['a', 'e'], 2: ['b'], 3: ['d', 'g'] };
+    fingers[2] = { 1: ['d', 'g'], 2: ['a'], 4: ['E'] };
+    fingers[3] = { 1: ['e', 'E', 'b', 'g'], 3: ['d', 'a'] };
+    fingers[4] = { 1: ['d'], 2: ['e'], 3: ['g'], 4: ['b'] };
     return fingers;
   }
 
