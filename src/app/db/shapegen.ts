@@ -1,7 +1,7 @@
 import { ToneUp } from '../model/tone';
 
 export class ShapeGen {
-  static generateShapes(fingers: Array, frets: number): {} {
+  static generateShapes(fingers: Array<any>, frets: number): {} {
     const data = {};
     const CBases = [0, 2, 4, 7, 9];
     Object.keys(ToneUp).filter(t => typeof ToneUp[t] === 'number').forEach((t, ti) => {
