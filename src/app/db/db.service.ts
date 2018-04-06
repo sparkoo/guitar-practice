@@ -3,10 +3,12 @@ import { Shape } from '../model/shape';
 import { Type } from '../model/type';
 import { Tone } from '../model/tone';
 import { OctaveShapesService } from './octave-shapes.service';
+import { ChordsService } from './chords.service';
 
 @Injectable()
 export class DbService {
-  constructor(private octaveShapesService: OctaveShapesService) { }
+  constructor(private octaveShapesService: OctaveShapesService,
+              private chordService: ChordsService) { }
 
   get(): Shape {
     return { frets: 6, base: 0, fingers: { 0: ['g', 'e'], 1: ['b'], 3: ['d'], 4: ['a'] } };
@@ -18,6 +20,10 @@ export class DbService {
 
   getOctaveShape(key: string): Shape {
     return this.octaveShapesService.get(key);
+  }
+
+  getChord(key: string): Shape {
+    return this.chordService.get(key);
   }
 }
 
