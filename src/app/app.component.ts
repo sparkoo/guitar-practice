@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { DbService } from './db/db.service';
-import { Type } from './model/type';
-import { Tone } from './model/tone';
 import { Shape } from './model/shape';
 
 @Component({
