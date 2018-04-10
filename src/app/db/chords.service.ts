@@ -9,6 +9,10 @@ import { DbServiceBase } from './db-service-base';
 @Injectable()
 export class ChordsService extends DbServiceBase {
 
+  constructor() {
+    super();
+  }
+
   private static initMajorFingers(): any[] {
     const fingers = [];
     fingers[0] = { 0: ['g', 'e', 'E', 'a', 'd', 'b'], 1: ['b'], 2: ['d'], 3: ['a'] };

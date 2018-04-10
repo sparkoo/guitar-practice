@@ -10,6 +10,10 @@ import { DbServiceBase } from './db-service-base';
 @Injectable()
 export class OctaveShapesService extends DbServiceBase {
 
+  constructor() {
+    super();
+  }
+
   private static initFingers(): any[] {
     const fingers = [];
     fingers[0] = { 1: ['b'], 3: ['a'] };
