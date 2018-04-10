@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Tone, ToneUp } from '../model/tone';
+import { Tone} from '../model/tone';
 import { Shape } from '../model/shape';
 import { DbServiceBase } from './db-service-base';
 
@@ -24,20 +24,7 @@ export class OctaveShapesService extends DbServiceBase {
   }
 
   generateShapes(frets: number): {} {
-    const data = {};
-    const CBases = [0, 2, 4, 7, 9];
-    const fingers = OctaveShapesService.initFingers();
-    Object.keys(ToneUp).filter(t => typeof ToneUp[t] === 'number').forEach((t, ti) => {
-      for (let p = 0; p < 5; p++) {
-        const shapeName = `${t}_${p + 1}`;
-        data[shapeName] = {
-          frets: frets,
-          base: (CBases[p] + ti) % 12,
-          fingers: fingers[p]
-        };
-      }
-    });
-    return data;
+    return DbServiceBase.generateShapes(frets, OctaveShapesService.initFingers());
   }
 
   query(query: { tone: Tone, shape: number }): Shape {

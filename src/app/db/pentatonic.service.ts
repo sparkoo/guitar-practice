@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DbServiceBase } from './db-service-base';
 import { Shape } from '../model/shape';
-import { ToneUp } from '../model/tone';
 
 @Injectable()
 export class PentatonicService extends DbServiceBase {
@@ -31,27 +30,9 @@ export class PentatonicService extends DbServiceBase {
   }
 
   generateShapes(frets: number): {} {
-    const data = {};
-    const CBases = [0, 2, 4, 7, 9];
-    const majorFingers = PentatonicService.initMajorFingers();
-    const minorFingers = PentatonicService.initMinorFingers();
-    Object.keys(ToneUp).filter(t => typeof ToneUp[t] === 'number').forEach((t, ti) => {
-      for (let p = 0; p < 5; p++) {
-        const majorShapeName = `${t}_maj_${p + 1}`;
-        data[majorShapeName] = {
-          frets: frets,
-          base: (CBases[p] + ti) % 12,
-          fingers: majorFingers[p]
-        };
-        const minorShapeName = `${t}_min_${p + 1}`;
-        data[minorShapeName] = {
-          frets: frets,
-          base: (CBases[p] + ti) % 12,
-          fingers: minorFingers[p]
-        };
-      }
-    });
-    return data;
+    return DbServiceBase.generateMajMinShapes(frets,
+      PentatonicService.initMajorFingers(),
+      PentatonicService.initMinorFingers());
   }
 
   query(query: any): Shape {
