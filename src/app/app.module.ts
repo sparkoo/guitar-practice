@@ -8,6 +8,7 @@ import { DbService } from './db/db.service';
 import { OctaveShapesService } from './db/octave-shapes.service';
 import { ChordsService } from './db/chords.service';
 import { PentatonicService } from './db/pentatonic.service';
+import { ArpeggiosService } from './db/arpeggios.service';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { PentatonicService } from './db/pentatonic.service';
     DbService,
     OctaveShapesService,
     ChordsService,
-    PentatonicService
+    PentatonicService,
+    ArpeggiosService
   ],
   bootstrap: [AppComponent]
 })
