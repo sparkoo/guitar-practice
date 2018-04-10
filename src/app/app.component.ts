@@ -25,4 +25,8 @@ export class AppComponent {
   getPentatonic(key: string) {
     return this.dbService.getPentatonic(key);
   }
+
+  getArpeggio(key: string) {
+    return this.dbService.getArpeggio(key);
+  }
 }
