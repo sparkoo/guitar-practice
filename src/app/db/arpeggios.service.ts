@@ -5,10 +5,6 @@ import { Shape } from '../model/shape';
 @Injectable()
 export class ArpeggiosService extends DbServiceBase {
 
-  constructor() {
-    super(5);
-  }
-
   generateShapes(frets: number): {} {
     return undefined;
   }

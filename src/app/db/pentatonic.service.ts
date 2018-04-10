@@ -5,10 +5,6 @@ import { Shape } from '../model/shape';
 @Injectable()
 export class PentatonicService extends DbServiceBase {
 
-  constructor() {
-    super(5);
-  }
-
   private static initMajorFingers(): any[] {
     const fingers = [];
     fingers[0] = { 0: ['E', 'a', 'd', 'g', 'e'], 1: ['b'], 2: ['d', 'g'], 3: ['E', 'a', 'b', 'e'] };

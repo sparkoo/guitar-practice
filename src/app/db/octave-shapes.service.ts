@@ -9,9 +9,6 @@ import { DbServiceBase } from './db-service-base';
  */
 @Injectable()
 export class OctaveShapesService extends DbServiceBase {
-  constructor() {
-    super(5);
-  }
 
   private static initFingers(): any[] {
     const fingers = [];

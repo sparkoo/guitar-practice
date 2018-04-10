@@ -7,7 +7,7 @@ export abstract class DbServiceBase implements DbServiceInterface {
 
   protected readonly data = {};
 
-  protected constructor(frets: number) {
+  protected constructor(frets: number = 5) {
     this.data = this.generateShapes(frets);
   }
 
