@@ -21,4 +21,8 @@ export class AppComponent {
   getChord(key: string): Shape {
     return this.dbService.getChord(key);
   }
+
+  getPentatonic(key: string) {
+    return this.dbService.getPentatonic(key);
+  }
 }

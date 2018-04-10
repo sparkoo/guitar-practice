@@ -4,11 +4,13 @@ import { Type } from '../model/type';
 import { Tone } from '../model/tone';
 import { OctaveShapesService } from './octave-shapes.service';
 import { ChordsService } from './chords.service';
+import { PentatonicService } from './pentatonic.service';
 
 @Injectable()
 export class DbService {
   constructor(private octaveShapesService: OctaveShapesService,
-              private chordService: ChordsService) { }
+              private chordService: ChordsService,
+              private pentatonicService: PentatonicService) { }
 
   query(query: Query): Shape {
     return undefined;
@@ -20,6 +22,10 @@ export class DbService {
 
   getChord(key: string): Shape {
     return this.chordService.get(key);
+  }
+
+  getPentatonic(key: string) {
+    return this.pentatonicService.get(key);
   }
 }
 

@@ -3,7 +3,7 @@ import { DbServiceBase } from './db-service-base';
 import { Shape } from '../model/shape';
 
 @Injectable()
-export class PentatonicService extends DbServiceBase{
+export class PentatonicService extends DbServiceBase {
 
   constructor() {
     super(5);

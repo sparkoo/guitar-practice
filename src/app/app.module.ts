@@ -7,6 +7,7 @@ import { FretboardComponent } from './fretboard/fretboard.component';
 import { DbService } from './db/db.service';
 import { OctaveShapesService } from './db/octave-shapes.service';
 import { ChordsService } from './db/chords.service';
+import { PentatonicService } from './db/pentatonic.service';
 
 
 @NgModule({
@@ -17,7 +18,13 @@ import { ChordsService } from './db/chords.service';
   imports: [
     BrowserModule
   ],
-  providers: [DbService, OctaveShapesService, ChordsService],
+  providers: [
+    DbService,
+    OctaveShapesService,
+    ChordsService,
+    PentatonicService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
