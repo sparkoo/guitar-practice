@@ -12,7 +12,14 @@
   </div>
   <div class="col-md-3">
     <h3>Shape #</h3>
-
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let shapeNo of ShapeNo"
+          [ngClass]="{'active': shapeNo === selectedShapeNo}"
+          (click)="selectShapeNo(shapeNo)">
+        {{shapeNo}}
+      </li>
+    </ul>
   </div>
 </div>
 <hr>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OctaveShapesService } from '../db/octave-shapes.service';
 import { Shape } from '../model/shape';
-import { ToneUp, ToneUpKeys, ToneValue } from '../model/tone';
+import { ShapeNo, ToneUp, ToneUpKeys, ToneValue } from '../model/tone';
 
 @Component({
   selector: 'app-octave-shapes',
@@ -16,6 +16,7 @@ export class OctaveShapesComponent implements OnInit {
 
   readonly tones = ToneUpKeys;
   readonly ToneUp = ToneUp;
+  readonly ShapeNo = ShapeNo;
 
   constructor(private octaveShapesService: OctaveShapesService) { }
 
