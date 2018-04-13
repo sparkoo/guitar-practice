@@ -1,6 +1,6 @@
 import { DbServiceInterface } from './db-interface';
 import { Shape } from '../model/shape';
-import { ToneUp } from '../model/tone';
+import { ToneUpKeys } from '../model/tone';
 
 export abstract class DbServiceBase implements DbServiceInterface {
   private static CBases = [0, 2, 4, 7, 9];
@@ -13,7 +13,7 @@ export abstract class DbServiceBase implements DbServiceInterface {
 
   protected static generateMajMinShapes(frets: number, fingersMaj: any[], fingersMin: any[]): {} {
     const data = {};
-    Object.keys(ToneUp).filter(t => typeof ToneUp[t] === 'number').forEach((t, ti) => {
+    ToneUpKeys.forEach((t, ti) => {
       for (let p = 0; p < 5; p++) {
         const majorShapeName = `${t}_maj_${p + 1}`;
         data[majorShapeName] = {
@@ -34,7 +34,7 @@ export abstract class DbServiceBase implements DbServiceInterface {
 
   protected static generateShapes(frets: number, fingers: any[]): {} {
     const data = {};
-    Object.keys(ToneUp).filter(t => typeof ToneUp[t] === 'number').forEach((t, ti) => {
+    ToneUpKeys.forEach((t, ti) => {
       for (let p = 0; p < 5; p++) {
         const shapeName = `${t}_${p + 1}`;
         data[shapeName] = {

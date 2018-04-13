@@ -9,8 +9,22 @@ export enum Tone {
 }
 
 export enum ToneUp {
-  C, Csharp, D, Dsharp, E, F, Fsharp, G, Gsharp, A, Asharp, B,
+  C = 'C',
+  Csharp = 'C#',
+  D = 'D',
+  Dsharp = 'D#',
+  E = 'E',
+  F = 'F',
+  Fsharp = 'F#',
+  G = 'F',
+  Gsharp = 'G#',
+  A = 'A',
+  Asharp = 'A#',
+  B = 'B',
 }
+
+export const ToneUpNames = Object.values(ToneUp);
+export const ToneUpKeys = Object.keys(ToneUp);
 
 export enum Tonality {
   MAJOR, MINOR
