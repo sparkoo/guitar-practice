@@ -29,4 +29,15 @@
       </li>
     </ul>
   </div>
+  <div class="col-md-2">
+    <h3>Tonality</h3>
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let tonality of TonalityKeys"
+          [ngClass]="{'active': Tonality[tonality] === selectedTonality}"
+          (click)="selectTonality(Tonality[tonality])">
+        {{tonality}}
+      </li>
+    </ul>
+  </div>
 </div>
