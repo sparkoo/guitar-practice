@@ -9,9 +9,10 @@ import { ToneUp, ToneUpKeys, ToneValue } from '../model/tone';
   styleUrls: ['./octave-shapes.component.scss']
 })
 export class OctaveShapesComponent implements OnInit {
-  shape: Shape = this.octaveShapesService.get('C_3');
+  shape: Shape;
 
   selectedTone: ToneValue = ToneUp['C'];
+  selectedShapeNo = 1;
 
   readonly tones = ToneUpKeys;
   readonly ToneUp = ToneUp;
@@ -19,6 +20,7 @@ export class OctaveShapesComponent implements OnInit {
   constructor(private octaveShapesService: OctaveShapesService) { }
 
   ngOnInit() {
+    this.drawShape();
   }
 
   selectTone(tone: ToneValue) {
@@ -27,7 +29,12 @@ export class OctaveShapesComponent implements OnInit {
     this.drawShape();
   }
 
+  selectShapeNo(shapeNo: number) {
+    this.selectedShapeNo = shapeNo;
+    this.drawShape();
+  }
+
   drawShape() {
-    this.shape = this.octaveShapesService.get(`${this.selectedTone.key}_3`);
+    this.shape = this.octaveShapesService.get(`${this.selectedTone.key}_${this.selectedShapeNo}`);
   }
 }
