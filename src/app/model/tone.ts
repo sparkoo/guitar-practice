@@ -31,8 +31,14 @@ export const ToneUp = {
 export const ToneUpNames = Object.values(ToneUp).map(t => t.name);
 export const ToneUpKeys = Object.keys(ToneUp);
 
-export enum Tonality {
-  MAJOR, MINOR
+export interface TonalityValue {
+  key: string;
+  name: string;
 }
+
+export const Tonality = {
+  'MAJOR': { key: 'MAJOR', name: 'maj' },
+  'MINOR': { key: 'MINOR', name: 'min' }
+};
 
 export const ShapeNo = [1, 2, 3, 4, 5];
