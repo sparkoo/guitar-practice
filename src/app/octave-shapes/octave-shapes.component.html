@@ -1,3 +1,23 @@
-<p>
-  octave-shapes works!
-</p>
+<div class="row">
+  <div class="col-md-2">
+    <h3>Tone</h3>
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let tone of tones"
+          [ngClass]="{'active': ToneUp[tone] === selectedTone}"
+          (click)="selectTone(ToneUp[tone])">
+        {{ToneUp[tone]}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-3">
+    <h3>Shape #</h3>
+
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-2">
+    <app-fretboard [shape]="shape"></app-fretboard>
+  </div>
+</div>
