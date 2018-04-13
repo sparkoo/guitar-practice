@@ -16,7 +16,7 @@ export enum ToneUp {
   E = 'E',
   F = 'F',
   Fsharp = 'F#',
-  G = 'F',
+  G = 'G',
   Gsharp = 'G#',
   A = 'A',
   Asharp = 'A#',
