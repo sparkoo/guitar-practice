@@ -9,15 +9,27 @@ import { OctaveShapesService } from './db/octave-shapes.service';
 import { ChordsService } from './db/chords.service';
 import { PentatonicService } from './db/pentatonic.service';
 import { ArpeggiosService } from './db/arpeggios.service';
+import { AppRoutingModule } from './app-routing.module';
+import { PracticeComponent } from './practice/practice.component';
+import { ChordsComponent } from './chords/chords.component';
+import { OctaveShapesComponent } from './octave-shapes/octave-shapes.component';
+import { ArpeggiosComponent } from './arpeggios/arpeggios.component';
+import { PentatonicsComponent } from './pentatonics/pentatonics.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FretboardComponent
+    FretboardComponent,
+    PracticeComponent,
+    ChordsComponent,
+    OctaveShapesComponent,
+    ArpeggiosComponent,
+    PentatonicsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [
     DbService,
