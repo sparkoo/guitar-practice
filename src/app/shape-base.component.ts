@@ -13,6 +13,7 @@ export abstract class ShapeBaseComponent implements OnInit {
   readonly ToneUp = ToneUp;
   readonly ShapeNo = ShapeNo;
   readonly Tonality = Tonality;
+  readonly TonalityKeys = Object.keys(Tonality);
 
   protected constructor() {
     this.selectedTone = this.initTone();
