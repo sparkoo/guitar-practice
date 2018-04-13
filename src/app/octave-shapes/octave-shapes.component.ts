@@ -1,40 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { OctaveShapesService } from '../db/octave-shapes.service';
-import { Shape } from '../model/shape';
-import { ShapeNo, ToneUp, ToneUpKeys, ToneValue } from '../model/tone';
+import { ShapeBaseComponent } from '../shape-base.component';
+import { TonalityValue, ToneUp, ToneValue } from '../model/tone';
 
 @Component({
   selector: 'app-octave-shapes',
   templateUrl: './octave-shapes.component.html',
   styleUrls: ['./octave-shapes.component.scss']
 })
-export class OctaveShapesComponent implements OnInit {
-  shape: Shape;
-
-  selectedTone: ToneValue = ToneUp['C'];
-  selectedShapeNo = 1;
-
-  readonly tones = ToneUpKeys;
-  readonly ToneUp = ToneUp;
-  readonly ShapeNo = ShapeNo;
-
-  constructor(private octaveShapesService: OctaveShapesService) { }
-
-  ngOnInit() {
-    this.drawShape();
+export class OctaveShapesComponent extends ShapeBaseComponent {
+  constructor(private octaveShapesService: OctaveShapesService) {
+    super();
   }
 
-  selectTone(tone: ToneValue) {
-    this.selectedTone = tone;
-    this.drawShape();
+  getShape() {
+    return this.octaveShapesService.get(`${this.selectedTone.key}_${this.selectedShapeNo}`);
   }
 
-  selectShapeNo(shapeNo: number) {
-    this.selectedShapeNo = shapeNo;
-    this.drawShape();
+  initShapeNo(): number {
+    return 1;
   }
 
-  drawShape() {
-    this.shape = this.octaveShapesService.get(`${this.selectedTone.key}_${this.selectedShapeNo}`);
+  initTonality(): TonalityValue {
+    return undefined;
+  }
+
+  initTone(): ToneValue {
+    return ToneUp.C;
   }
 }
