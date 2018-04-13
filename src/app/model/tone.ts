@@ -34,3 +34,5 @@ export const ToneUpKeys = Object.keys(ToneUp);
 export enum Tonality {
   MAJOR, MINOR
 }
+
+export const ShapeNo = [1, 2, 3, 4, 5];
