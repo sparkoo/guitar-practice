@@ -6,7 +6,7 @@
           *ngFor="let tone of tones"
           [ngClass]="{'active': ToneUp[tone] === selectedTone}"
           (click)="selectTone(ToneUp[tone])">
-        {{ToneUp[tone]}}
+        {{ToneUp[tone].name}}
       </li>
     </ul>
   </div>
