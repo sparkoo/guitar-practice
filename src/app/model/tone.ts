@@ -1,3 +1,8 @@
+export interface ToneValue {
+  key: string;
+  name: string;
+}
+
 export enum Tone {
   Aflat, A, Asharp,
   Bflat, B, Bsharp,
@@ -8,22 +13,22 @@ export enum Tone {
   Gflat, G, Gsharp
 }
 
-export enum ToneUp {
-  C = 'C',
-  Csharp = 'C#',
-  D = 'D',
-  Dsharp = 'D#',
-  E = 'E',
-  F = 'F',
-  Fsharp = 'F#',
-  G = 'G',
-  Gsharp = 'G#',
-  A = 'A',
-  Asharp = 'A#',
-  B = 'B',
-}
+export const ToneUp = {
+    'C': { key: 'C', name: 'C' },
+    'Csharp': { key: 'Csharp', name: 'C#' },
+    'D': { key: 'D', name: 'D' },
+    'Dsharp': { key: 'Dsharp', name: 'D#' },
+    'E': { key: 'E', name: 'E' },
+    'F': { key: 'F', name: 'F' },
+    'Fsharp': { key: 'Fsharp', name: 'F#' },
+    'G': { key: 'G', name: 'G' },
+    'Gsharp': { key: 'Gsharp', name: 'G#' },
+    'A': { key: 'A', name: 'A' },
+    'Asharp': { key: 'Asharp', name: 'A#' },
+    'B': { key: 'B', name: 'B' }
+  };
 
-export const ToneUpNames = Object.values(ToneUp);
+export const ToneUpNames = Object.values(ToneUp).map(t => t.name);
 export const ToneUpKeys = Object.keys(ToneUp);
 
 export enum Tonality {
