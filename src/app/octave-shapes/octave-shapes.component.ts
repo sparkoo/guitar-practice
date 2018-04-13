@@ -25,7 +25,6 @@ export class OctaveShapesComponent implements OnInit {
   }
 
   selectTone(tone: ToneValue) {
-    console.log(ToneUp[tone]);
     this.selectedTone = tone;
     this.drawShape();
   }
