@@ -12,7 +12,7 @@
     <ul class="list-group">
       <li class="list-group-item"
           *ngFor="let tone of tones"
-          [ngClass]="{'active': ToneUp[tone] === selectedTone}"
+          [ngClass]="{'active': ToneUp[tone] === selection.tone}"
           (click)="selectTone(ToneUp[tone])">
         {{ToneUp[tone].name}}
       </li>
@@ -23,7 +23,7 @@
     <ul class="list-group">
       <li class="list-group-item"
           *ngFor="let shapeNo of ShapeNo"
-          [ngClass]="{'active': shapeNo === selectedShapeNo}"
+          [ngClass]="{'active': shapeNo === selection.shapeNo}"
           (click)="selectShapeNo(shapeNo)">
         {{shapeNo}}
       </li>
@@ -34,7 +34,7 @@
     <ul class="list-group">
       <li class="list-group-item"
           *ngFor="let tonality of TonalityKeys"
-          [ngClass]="{'active': Tonality[tonality] === selectedTonality}"
+          [ngClass]="{'active': Tonality[tonality] === selection.tonality}"
           (click)="selectTonality(Tonality[tonality])">
         {{tonality}}
       </li>

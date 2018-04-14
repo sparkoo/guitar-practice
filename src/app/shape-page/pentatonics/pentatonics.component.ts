@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Tonality, ToneUp } from '../../model/tone';
 import { ShapeBaseComponent } from '../shape-base.component';
 import { PentatonicService } from '../../db/pentatonic.service';
+import { SelectionService } from '../selection.service';
 
 @Component({
   selector: 'app-pentatonics',
@@ -10,7 +11,8 @@ import { PentatonicService } from '../../db/pentatonic.service';
 })
 export class PentatonicsComponent extends ShapeBaseComponent {
 
-  constructor(private pentatonicService: PentatonicService) {
-    super(pentatonicService, ToneUp.C, Tonality.MAJOR, 1);
+  constructor(private selectionService: SelectionService,
+              private pentatonicService: PentatonicService) {
+    super(selectionService, pentatonicService, ToneUp.C, Tonality.MAJOR, 1);
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Tonality, ToneUp } from '../../model/tone';
 import { ChordsService } from '../../db/chords.service';
 import { ShapeBaseComponent } from '../shape-base.component';
+import { SelectionService } from '../selection.service';
 
 @Component({
   selector: 'app-chords',
@@ -10,7 +11,8 @@ import { ShapeBaseComponent } from '../shape-base.component';
 })
 export class ChordsComponent extends ShapeBaseComponent {
 
-  constructor(private chordShapesService: ChordsService) {
-    super(chordShapesService, ToneUp.C, Tonality.MAJOR, 1);
+  constructor(private selectionService: SelectionService,
+              private chordShapesService: ChordsService) {
+    super(selectionService, chordShapesService, ToneUp.C, Tonality.MAJOR, 1);
   }
 }
