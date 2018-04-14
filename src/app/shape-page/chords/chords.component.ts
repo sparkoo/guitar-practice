@@ -13,8 +13,4 @@ export class ChordsComponent extends ShapeBaseComponent {
   constructor(private chordShapesService: ChordsService) {
     super(chordShapesService, ToneUp.C, Tonality.MAJOR, 1);
   }
-
-  getShapeKey(): string {
-    return `${this.selectedTone.key}_${this.selectedTonality['name']}_${this.selectedShapeNo}`;
-  }
 }

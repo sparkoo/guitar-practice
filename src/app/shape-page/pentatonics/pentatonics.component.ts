@@ -13,8 +13,4 @@ export class PentatonicsComponent extends ShapeBaseComponent {
   constructor(private pentatonicService: PentatonicService) {
     super(pentatonicService, ToneUp.C, Tonality.MAJOR, 1);
   }
-
-  getShapeKey(): string {
-    return `${this.selectedTone.key}_${this.selectedTonality['name']}_${this.selectedShapeNo}`;
-  }
 }
