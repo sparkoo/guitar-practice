@@ -13,8 +13,7 @@ export abstract class ShapeBaseComponent implements OnInit {
   readonly Tonality = Tonality;
   readonly TonalityKeys = Object.keys(Tonality);
 
-  protected constructor(protected selection: SelectionService,
-                        private dbService: DbServiceBase) {
+  protected constructor(protected selection: SelectionService) {
   }
 
   ngOnInit() {
@@ -36,8 +35,10 @@ export abstract class ShapeBaseComponent implements OnInit {
     this.drawShape();
   }
 
+  abstract getDbService(): DbServiceBase;
+
   drawShape() {
-    this.shape = this.dbService.get(this.getShapeKey());
+    this.shape = this.getDbService().get(this.getShapeKey());
   }
 
   protected getShapeKey(): string {
