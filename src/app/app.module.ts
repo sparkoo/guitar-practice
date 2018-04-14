@@ -13,8 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { PracticeComponent } from './practice/practice.component';
 import { ChordsComponent } from './shape-page/chords/chords.component';
 import { OctaveShapesComponent } from './shape-page/octave-shapes/octave-shapes.component';
-import { ArpeggiosComponent } from './arpeggios/arpeggios.component';
-import { PentatonicsComponent } from './pentatonics/pentatonics.component';
+import { ArpeggiosComponent } from './shape-page/arpeggios/arpeggios.component';
+import { PentatonicsComponent } from './shape-page/pentatonics/pentatonics.component';
 
 
 @NgModule({
