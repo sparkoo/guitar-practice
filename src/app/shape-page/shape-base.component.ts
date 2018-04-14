@@ -7,23 +7,20 @@ import { SelectionService } from './selection.service';
 export abstract class ShapeBaseComponent implements OnInit {
   shape: Shape;
 
-  protected readonly dbService: DbServiceBase;
-  private readonly selectionService: SelectionService;
-
   readonly tones = ToneUpKeys;
   readonly ToneUp = ToneUp;
   readonly ShapeNo = ShapeNo;
   readonly Tonality = Tonality;
   readonly TonalityKeys = Object.keys(Tonality);
 
-  protected constructor(selectionService: SelectionService,
-                        dbService: DbServiceBase,
+  protected constructor(protected selection: SelectionService,
+                        private dbService: DbServiceBase,
                         initTone: ToneValue,
                         initTonality: TonalityValue,
                         initShape: number) {
-    this.selectionService.selectTone(initTone);
-    this.selectionService.selectShapeNo(initShape);
-    this.selectionService.selectTonality(initTonality);
+    this.selection.selectTone(initTone);
+    this.selection.selectShapeNo(initShape);
+    this.selection.selectTonality(initTonality);
     this.dbService = dbService;
   }
 
@@ -32,17 +29,17 @@ export abstract class ShapeBaseComponent implements OnInit {
   }
 
   selectTone(tone: ToneValue) {
-    this.selectionService.selectTone(tone);
+    this.selection.selectTone(tone);
     this.drawShape();
   }
 
   selectShapeNo(shapeNo: number) {
-    this.selectionService.selectShapeNo(shapeNo);
+    this.selection.selectShapeNo(shapeNo);
     this.drawShape();
   }
 
   selectTonality(tonality: TonalityValue) {
-    this.selectionService.selectTonality(tonality);
+    this.selection.selectTonality(tonality);
     this.drawShape();
   }
 
@@ -51,6 +48,6 @@ export abstract class ShapeBaseComponent implements OnInit {
   }
 
   protected getShapeKey(): string {
-    return `${this.selectionService.tone.key}_${this.selectionService.tonality['name']}_${this.selectionService.shapeNo}`;
+    return `${this.selection.tone.key}_${this.selection.tonality['name']}_${this.selection.shapeNo}`;
   }
 }
