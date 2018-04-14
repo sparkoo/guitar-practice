@@ -18,6 +18,7 @@ export class PracticeComponent extends ShapeBaseComponent {
   typeDatabases: {};
   types: string[];
   selectedType: string;
+  showFretboard: boolean;
 
   constructor(private selectionService: SelectionService,
               private chordsService: ChordsService,
@@ -65,5 +66,9 @@ export class PracticeComponent extends ShapeBaseComponent {
 
   getRandomElementFromObject(object: Object) {
     return object[Object.keys(object)[Math.floor(Math.random() * Object.keys(object).length)]];
+  }
+
+  toggleFretboard() {
+    this.showFretboard = !this.showFretboard;
   }
 }

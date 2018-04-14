@@ -1,15 +1,19 @@
+<hr/>
 <div class="row">
   <div class="col-md-2">
-    <button class="btn btn-primary" (click)="randomizeSelection()">randomize</button>
+    <button class="btn btn-success" (click)="randomizeSelection()">randomize</button>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-primary" (click)="toggleFretboard()">show/hide fretboard</button>
   </div>
 </div>
-
+<hr/>
 <div class="row">
   <div class="col-md-1">
   </div>
   <div class="col-md-2">
     <h3>Fretboard</h3>
-    <app-fretboard [shape]="shape"></app-fretboard>
+    <app-fretboard [shape]="shape" *ngIf="showFretboard"></app-fretboard>
   </div>
   <div class="col-md-1">
   </div>
