@@ -2,15 +2,13 @@ import { ShapeNo, Tonality, TonalityValue, ToneUp, ToneUpKeys, ToneValue } from 
 import { OnInit } from '@angular/core';
 import { Shape } from '../model/shape';
 import { DbServiceBase } from '../db/db-service-base';
+import { SelectionService } from './selection.service';
 
 export abstract class ShapeBaseComponent implements OnInit {
   shape: Shape;
 
-  selectedTone: ToneValue;
-  selectedShapeNo: number;
-  selectedTonality: TonalityValue;
-
   protected readonly dbService: DbServiceBase;
+  private readonly selectionService: SelectionService;
 
   readonly tones = ToneUpKeys;
   readonly ToneUp = ToneUp;
@@ -18,13 +16,14 @@ export abstract class ShapeBaseComponent implements OnInit {
   readonly Tonality = Tonality;
   readonly TonalityKeys = Object.keys(Tonality);
 
-  protected constructor(dbService: DbServiceBase,
+  protected constructor(selectionService: SelectionService,
+                        dbService: DbServiceBase,
                         initTone: ToneValue,
                         initTonality: TonalityValue,
                         initShape: number) {
-    this.selectedTone = initTone;
-    this.selectedShapeNo = initShape;
-    this.selectedTonality = initTonality;
+    this.selectionService.selectTone(initTone);
+    this.selectionService.selectShapeNo(initShape);
+    this.selectionService.selectTonality(initTonality);
     this.dbService = dbService;
   }
 
@@ -33,17 +32,17 @@ export abstract class ShapeBaseComponent implements OnInit {
   }
 
   selectTone(tone: ToneValue) {
-    this.selectedTone = tone;
+    this.selectionService.selectTone(tone);
     this.drawShape();
   }
 
   selectShapeNo(shapeNo: number) {
-    this.selectedShapeNo = shapeNo;
+    this.selectionService.selectShapeNo(shapeNo);
     this.drawShape();
   }
 
   selectTonality(tonality: TonalityValue) {
-    this.selectedTonality = tonality;
+    this.selectionService.selectTonality(tonality);
     this.drawShape();
   }
 
@@ -52,6 +51,6 @@ export abstract class ShapeBaseComponent implements OnInit {
   }
 
   protected getShapeKey(): string {
-    return `${this.selectedTone.key}_${this.selectedTonality['name']}_${this.selectedShapeNo}`;
+    return `${this.selectionService.tone.key}_${this.selectionService.tonality['name']}_${this.selectionService.shapeNo}`;
   }
 }
