@@ -14,15 +14,56 @@ import { PentatonicService } from '../db/pentatonic.service';
 })
 export class PracticeComponent extends ShapeBaseComponent {
 
+  databases: DbServiceBase[];
+  typeDatabases: {};
+  types: string[];
+  selectedType: string;
+
   constructor(private selectionService: SelectionService,
               private chordsService: ChordsService,
               private arpeggiosService: ArpeggiosService,
               private octaveShapesService: OctaveShapesService,
               private pentatonicsService: PentatonicService) {
     super(selectionService);
+    this.typeDatabases = {
+      'Octave Shape': this.octaveShapesService,
+      'Chord': this.chordsService,
+      'Pentatonic': this.pentatonicsService,
+      'Arpeggio': this.arpeggiosService
+    };
+    this.types = Object.keys(this.typeDatabases);
+    this.databases = Object.values(this.typeDatabases);
+    this.selectedType = this.types[1];
   }
 
   getDbService(): DbServiceBase {
-    return undefined;
+    console.log(this.selectedType);
+    console.log(this.typeDatabases[this.selectedType]);
+    return this.typeDatabases[this.selectedType];
+  }
+
+  randomizeSelection() {
+    const randomTone = this.getRandomElementFromObject(this.ToneUp);
+    const randomShapeNo = this.getRandomElementFromArray(this.ShapeNo);
+    const randomTonality = this.getRandomElementFromObject(this.Tonality);
+    const randomType = this.getRandomElementFromArray(this.types);
+    this.selectionService.selectTone(randomTone);
+    this.selectionService.selectShapeNo(randomShapeNo);
+    this.selectionService.selectTonality(randomTonality);
+    this.selectedType = randomType;
+    this.drawShape();
+  }
+
+  selectType(type: string) {
+    this.selectedType = type;
+    this.drawShape();
+  }
+
+  getRandomElementFromArray(array: any[]) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+  getRandomElementFromObject(object: Object) {
+    return object[Object.keys(object)[Math.floor(Math.random() * Object.keys(object).length)]];
   }
 }

@@ -1,4 +1,10 @@
 <div class="row">
+  <div class="col-md-2">
+    <button class="btn btn-primary" (click)="randomizeSelection()">randomize</button>
+  </div>
+</div>
+
+<div class="row">
   <div class="col-md-1">
   </div>
   <div class="col-md-2">
@@ -6,6 +12,17 @@
     <app-fretboard [shape]="shape"></app-fretboard>
   </div>
   <div class="col-md-1">
+  </div>
+  <div class="col-md-2">
+    <h3>Type</h3>
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let type of types"
+          [ngClass]="{'active': type === selectedType}"
+          (click)="selectType(type)">
+        {{type}}
+      </li>
+    </ul>
   </div>
   <div class="col-md-2">
     <h3>Tone</h3>
