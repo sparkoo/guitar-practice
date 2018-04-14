@@ -29,6 +29,6 @@ export class OctaveShapesService extends DbServiceBase {
   }
 
   protected generateKey(query: Query): string {
-    return `${Tone[query.tone]}_${query.shapeNo}`;
+    return `${query.tone.key}_${query.shapeNo}`;
   }
 }
