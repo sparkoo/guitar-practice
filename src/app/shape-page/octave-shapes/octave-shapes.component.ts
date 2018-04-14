@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { OctaveShapesService } from '../db/octave-shapes.service';
+import { OctaveShapesService } from '../../db/octave-shapes.service';
 import { ShapeBaseComponent } from '../shape-base.component';
-import { TonalityValue, ToneUp, ToneValue } from '../model/tone';
+import { TonalityValue, ToneUp, ToneValue } from '../../model/tone';
 
 @Component({
   selector: 'app-octave-shapes',

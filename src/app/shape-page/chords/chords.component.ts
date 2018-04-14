@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
-import { Tonality, TonalityValue, ToneUp, ToneValue } from '../model/tone';
-import { Shape } from '../model/shape';
-import { ChordsService } from '../db/chords.service';
+import { Tonality, TonalityValue, ToneUp, ToneValue } from '../../model/tone';
+import { Shape } from '../../model/shape';
+import { ChordsService } from '../../db/chords.service';
 import { ShapeBaseComponent } from '../shape-base.component';
 
 @Component({

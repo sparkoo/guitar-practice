@@ -1,6 +1,6 @@
-import { ShapeNo, Tonality, TonalityValue, ToneUp, ToneUpKeys, ToneValue } from './model/tone';
+import { ShapeNo, Tonality, TonalityValue, ToneUp, ToneUpKeys, ToneValue } from '../model/tone';
 import { OnInit } from '@angular/core';
-import { Shape } from './model/shape';
+import { Shape } from '../model/shape';
 
 export abstract class ShapeBaseComponent implements OnInit {
   shape: Shape;
