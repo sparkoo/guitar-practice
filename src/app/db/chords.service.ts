@@ -38,8 +38,4 @@ export class ChordsService extends DbServiceBase {
       ChordsService.initMajorFingers(),
       ChordsService.initMinorFingers());
   }
-
-  query(query: any): Shape {
-    return undefined;
-  }
 }

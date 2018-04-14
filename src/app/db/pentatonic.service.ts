@@ -34,9 +34,4 @@ export class PentatonicService extends DbServiceBase {
       PentatonicService.initMajorFingers(),
       PentatonicService.initMinorFingers());
   }
-
-  query(query: any): Shape {
-    return undefined;
-  }
-
 }

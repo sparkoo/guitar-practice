@@ -34,9 +34,4 @@ export class ArpeggiosService extends DbServiceBase {
       ArpeggiosService.initMajorFingers(),
       ArpeggiosService.initMinorFingers());
   }
-
-  query(query: any): Shape {
-    return undefined;
-  }
-
 }
