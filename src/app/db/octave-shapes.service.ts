@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Tone} from '../model/tone';
+import { Tone } from '../model/tone';
 import { Shape } from '../model/shape';
-import { DbServiceBase } from './db-service-base';
+import { DbServiceBase, Query } from './db-service-base';
 
 /**
  * query keys are in format
@@ -28,8 +28,7 @@ export class OctaveShapesService extends DbServiceBase {
     return DbServiceBase.generateShapes(frets, OctaveShapesService.initFingers());
   }
 
-  query(query: { tone: Tone, shape: number }): Shape {
-    const queryString = `${Tone[query.tone]}_${query.shape}`;
-    return this.queryData(queryString);
+  protected generateKey(query: Query): string {
+    return `${Tone[query.tone]}_${query.shapeNo}`;
   }
 }
