@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { TonalityValue, ToneValue } from '../model/tone';
+import { Tonality, TonalityValue, ToneUp, ToneValue } from '../model/tone';
 
 @Injectable()
 export class SelectionService {
 
-  private _tone: ToneValue;
-  private _shapeNo: number;
-  private _tonality: TonalityValue;
+  private _tone: ToneValue = ToneUp.C;
+  private _shapeNo = 1;
+  private _tonality: TonalityValue = Tonality.MAJOR;
 
   constructor() { }
 
