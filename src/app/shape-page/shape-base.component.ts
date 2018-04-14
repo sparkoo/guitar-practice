@@ -51,5 +51,7 @@ export abstract class ShapeBaseComponent implements OnInit {
     this.shape = this.dbService.get(this.getShapeKey());
   }
 
-  protected abstract getShapeKey(): string;
+  protected getShapeKey(): string {
+    return `${this.selectedTone.key}_${this.selectedTonality['name']}_${this.selectedShapeNo}`;
+  }
 }
