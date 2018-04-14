@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { OctaveShapesService } from '../../db/octave-shapes.service';
 import { ShapeBaseComponent } from '../shape-base.component';
 import { SelectionService } from '../selection.service';
+import { DbServiceBase } from '../../db/db-service-base';
 
 @Component({
   selector: 'app-octave-shapes',
@@ -11,7 +12,11 @@ import { SelectionService } from '../selection.service';
 export class OctaveShapesComponent extends ShapeBaseComponent {
   constructor(private selectionService: SelectionService,
               private octaveShapesService: OctaveShapesService) {
-    super(selectionService, octaveShapesService);
+    super(selectionService);
+  }
+
+  getDbService(): DbServiceBase {
+    return this.octaveShapesService;
   }
 
   getShapeKey(): string {
