@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Tone } from '../model/tone';
-import { Shape } from '../model/shape';
 import { DbServiceBase, Query } from './db-service-base';
 
 /**
@@ -28,7 +26,7 @@ export class OctaveShapesService extends DbServiceBase {
     return DbServiceBase.generateShapes(frets, OctaveShapesService.initFingers());
   }
 
-  protected generateKey(query: Query): string {
+  public generateKey(query: Query): string {
     return `${query.tone.key}_${query.shapeNo}`;
   }
 }

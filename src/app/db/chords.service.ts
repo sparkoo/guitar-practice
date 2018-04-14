@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Shape } from '../model/shape';
 import { DbServiceBase } from './db-service-base';
 
 /**
