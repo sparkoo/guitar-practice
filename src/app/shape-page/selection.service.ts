@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Tonality, TonalityValue, ToneUp, ToneValue } from '../model/tone';
+import { Query } from '../db/db-service-base';
 
 @Injectable()
 export class SelectionService {
@@ -22,7 +23,6 @@ export class SelectionService {
     this._tonality = tonality;
   }
 
-
   get tone(): ToneValue {
     return this._tone;
   }
@@ -33,5 +33,9 @@ export class SelectionService {
 
   get tonality(): TonalityValue {
     return this._tonality;
+  }
+
+  getQuery(): Query {
+    return { shapeNo: this.shapeNo, tone: this.tone, tonality: this.tonality };
   }
 }

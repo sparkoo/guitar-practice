@@ -38,10 +38,6 @@ export abstract class ShapeBaseComponent implements OnInit {
   abstract getDbService(): DbServiceBase;
 
   drawShape() {
-    this.shape = this.getDbService().get(this.getShapeKey());
-  }
-
-  protected getShapeKey(): string {
-    return `${this.selection.tone.key}_${this.selection.tonality['name']}_${this.selection.shapeNo}`;
+    this.shape = this.getDbService().get(this.getDbService().generateKey(this.selection.getQuery()));
   }
 }

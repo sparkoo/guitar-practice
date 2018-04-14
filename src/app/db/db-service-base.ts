@@ -67,7 +67,7 @@ export abstract class DbServiceBase implements DbServiceInterface {
     return this.get(this.generateKey(query));
   }
 
-  protected generateKey(query: Query): string {
+  public generateKey(query: Query): string {
     return `${query.tone.key}_${query.tonality['name']}_${query.shapeNo}`;
   }
 }
