@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Tonality, TonalityValue, ToneUp, ToneValue } from '../../model/tone';
-import { ChordsService } from '../../db/chords.service';
-import { Shape } from '../../model/shape';
 import { ShapeBaseComponent } from '../shape-base.component';
 import { PentatonicService } from '../../db/pentatonic.service';
 
@@ -13,11 +11,11 @@ import { PentatonicService } from '../../db/pentatonic.service';
 export class PentatonicsComponent extends ShapeBaseComponent {
 
   constructor(private pentatonicService: PentatonicService) {
-    super();
+    super(pentatonicService);
   }
 
-  getShape(): Shape {
-    return this.pentatonicService.get(`${this.selectedTone.key}_${this.selectedTonality['name']}_${this.selectedShapeNo}`);
+  getShapeKey(): string {
+    return `${this.selectedTone.key}_${this.selectedTonality['name']}_${this.selectedShapeNo}`;
   }
 
   initShapeNo(): number {

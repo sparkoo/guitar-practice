@@ -1,6 +1,7 @@
 import { ShapeNo, Tonality, TonalityValue, ToneUp, ToneUpKeys, ToneValue } from '../model/tone';
 import { OnInit } from '@angular/core';
 import { Shape } from '../model/shape';
+import { DbServiceBase } from '../db/db-service-base';
 
 export abstract class ShapeBaseComponent implements OnInit {
   shape: Shape;
@@ -9,16 +10,19 @@ export abstract class ShapeBaseComponent implements OnInit {
   selectedShapeNo: number;
   selectedTonality: TonalityValue;
 
+  protected readonly dbService: DbServiceBase;
+
   readonly tones = ToneUpKeys;
   readonly ToneUp = ToneUp;
   readonly ShapeNo = ShapeNo;
   readonly Tonality = Tonality;
   readonly TonalityKeys = Object.keys(Tonality);
 
-  protected constructor() {
+  protected constructor(dbService: DbServiceBase) {
     this.selectedTone = this.initTone();
     this.selectedShapeNo = this.initShapeNo();
     this.selectedTonality = this.initTonality();
+    this.dbService = dbService;
   }
 
   ngOnInit() {
@@ -41,14 +45,14 @@ export abstract class ShapeBaseComponent implements OnInit {
   }
 
   drawShape() {
-    this.shape = this.getShape();
+    this.shape = this.dbService.get(this.getShapeKey());
   }
 
-  abstract getShape(): Shape;
+  protected abstract getShapeKey(): string;
 
-  abstract initTone(): ToneValue;
+  protected abstract initTone(): ToneValue;
 
-  abstract initShapeNo(): number;
+  protected abstract initShapeNo(): number;
 
-  abstract initTonality(): TonalityValue;
+  protected abstract initTonality(): TonalityValue;
 }

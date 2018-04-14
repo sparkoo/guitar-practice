@@ -10,11 +10,11 @@ import { TonalityValue, ToneUp, ToneValue } from '../../model/tone';
 })
 export class OctaveShapesComponent extends ShapeBaseComponent {
   constructor(private octaveShapesService: OctaveShapesService) {
-    super();
+    super(octaveShapesService);
   }
 
-  getShape() {
-    return this.octaveShapesService.get(`${this.selectedTone.key}_${this.selectedShapeNo}`);
+  getShapeKey(): string {
+    return `${this.selectedTone.key}_${this.selectedShapeNo}`;
   }
 
   initShapeNo(): number {

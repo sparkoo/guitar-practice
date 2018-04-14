@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
 import { Tonality, TonalityValue, ToneUp, ToneValue } from '../../model/tone';
-import { Shape } from '../../model/shape';
 import { ChordsService } from '../../db/chords.service';
 import { ShapeBaseComponent } from '../shape-base.component';
 
@@ -12,11 +11,11 @@ import { ShapeBaseComponent } from '../shape-base.component';
 export class ChordsComponent extends ShapeBaseComponent {
 
   constructor(private chordShapesService: ChordsService) {
-    super();
+    super(chordShapesService);
   }
 
-  getShape(): Shape {
-    return this.chordShapesService.get(`${this.selectedTone.key}_${this.selectedTonality['name']}_${this.selectedShapeNo}`);
+  getShapeKey(): string {
+    return `${this.selectedTone.key}_${this.selectedTonality['name']}_${this.selectedShapeNo}`;
   }
 
   initShapeNo(): number {
