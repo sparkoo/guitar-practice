@@ -14,14 +14,7 @@ export abstract class ShapeBaseComponent implements OnInit {
   readonly TonalityKeys = Object.keys(Tonality);
 
   protected constructor(protected selection: SelectionService,
-                        private dbService: DbServiceBase,
-                        initTone: ToneValue,
-                        initTonality: TonalityValue,
-                        initShape: number) {
-    this.selection.selectTone(initTone);
-    this.selection.selectShapeNo(initShape);
-    this.selection.selectTonality(initTonality);
-    this.dbService = dbService;
+                        private dbService: DbServiceBase) {
   }
 
   ngOnInit() {

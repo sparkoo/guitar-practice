@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Tonality, ToneUp } from '../../model/tone';
 import { ShapeBaseComponent } from '../shape-base.component';
 import { ArpeggiosService } from '../../db/arpeggios.service';
 import { SelectionService } from '../selection.service';
@@ -13,6 +12,6 @@ export class ArpeggiosComponent extends ShapeBaseComponent {
 
   constructor(private selectionService: SelectionService,
               private arpeggiosService: ArpeggiosService) {
-    super(selectionService, arpeggiosService, ToneUp.C, Tonality.MAJOR, 1);
+    super(selectionService, arpeggiosService);
   }
 }
