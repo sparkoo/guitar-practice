@@ -1,6 +1,12 @@
 import { DbServiceInterface } from './db-interface';
 import { Shape } from '../model/shape';
-import { ToneUpKeys } from '../model/tone';
+import { TonalityValue, ToneUpKeys, ToneValue } from '../model/tone';
+
+export interface Query {
+  tone: ToneValue;
+  tonality: TonalityValue;
+  shapeNo: number;
+}
 
 export abstract class DbServiceBase implements DbServiceInterface {
   private static CBases = [0, 2, 4, 7, 9];
@@ -57,5 +63,11 @@ export abstract class DbServiceBase implements DbServiceInterface {
     return this.data[key];
   }
 
-  abstract query(query: any): Shape;
+  public query(query: Query): Shape {
+    return this.get(this.generateKey(query));
+  }
+
+  protected generateKey(query: Query): string {
+    return `${query.tone.key}_${query.tonality['name']}_${query.shapeNo}`;
+  }
 }
