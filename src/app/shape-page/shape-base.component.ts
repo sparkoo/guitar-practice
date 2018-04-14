@@ -18,10 +18,13 @@ export abstract class ShapeBaseComponent implements OnInit {
   readonly Tonality = Tonality;
   readonly TonalityKeys = Object.keys(Tonality);
 
-  protected constructor(dbService: DbServiceBase) {
-    this.selectedTone = this.initTone();
-    this.selectedShapeNo = this.initShapeNo();
-    this.selectedTonality = this.initTonality();
+  protected constructor(dbService: DbServiceBase,
+                        initTone: ToneValue,
+                        initTonality: TonalityValue,
+                        initShape: number) {
+    this.selectedTone = initTone;
+    this.selectedShapeNo = initShape;
+    this.selectedTonality = initTonality;
     this.dbService = dbService;
   }
 
@@ -49,10 +52,4 @@ export abstract class ShapeBaseComponent implements OnInit {
   }
 
   protected abstract getShapeKey(): string;
-
-  protected abstract initTone(): ToneValue;
-
-  protected abstract initShapeNo(): number;
-
-  protected abstract initTonality(): TonalityValue;
 }
