@@ -10,6 +10,7 @@ import { DbServiceBase } from '../../db/db-service-base';
   styleUrls: ['../shape-base.component.scss', './octave-shapes.component.scss']
 })
 export class OctaveShapesComponent extends ShapeBaseComponent {
+
   constructor(private selectionService: SelectionService,
               private octaveShapesService: OctaveShapesService) {
     super(selectionService);
@@ -17,9 +18,5 @@ export class OctaveShapesComponent extends ShapeBaseComponent {
 
   getDbService(): DbServiceBase {
     return this.octaveShapesService;
-  }
-
-  getShapeKey(): string {
-    return `${this.selectionService.tone.key}_${this.selectionService.shapeNo}`;
   }
 }
