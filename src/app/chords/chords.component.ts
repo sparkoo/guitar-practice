@@ -7,7 +7,7 @@ import { ShapeBaseComponent } from '../shape-base.component';
 @Component({
   selector: 'app-chords',
   templateUrl: './chords.component.html',
-  styleUrls: ['./chords.component.scss']
+  styleUrls: ['../shape-base.component.scss', './chords.component.scss']
 })
 export class ChordsComponent extends ShapeBaseComponent {
 
