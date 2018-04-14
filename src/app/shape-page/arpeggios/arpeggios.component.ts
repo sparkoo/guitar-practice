@@ -10,7 +10,7 @@ import { ArpeggiosService } from '../../db/arpeggios.service';
 })
 export class ArpeggiosComponent extends ShapeBaseComponent {
 
-  constructor(private apeggiosService: ArpeggiosService) {
-    super(apeggiosService, ToneUp.C, Tonality.MAJOR, 1);
+  constructor(private arpeggiosService: ArpeggiosService) {
+    super(arpeggiosService, ToneUp.C, Tonality.MAJOR, 1);
   }
 }
