@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChordsService } from '../../db/chords.service';
+import { ChordsService } from './chords.service';
 import { ShapeBaseComponent } from '../shape-base.component';
 import { SelectionService } from '../selection.service';
 import { DbServiceBase } from '../../db/db-service-base';

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ShapeBaseComponent } from '../shape-base.component';
-import { PentatonicService } from '../../db/pentatonic.service';
+import { PentatonicService } from './pentatonic.service';
 import { SelectionService } from '../selection.service';
 import { DbServiceBase } from '../../db/db-service-base';
 

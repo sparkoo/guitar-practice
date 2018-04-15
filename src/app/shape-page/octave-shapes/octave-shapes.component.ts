@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OctaveShapesService } from '../../db/octave-shapes.service';
+import { OctaveShapesService } from './octave-shapes.service';
 import { ShapeBaseComponent } from '../shape-base.component';
 import { SelectionService } from '../selection.service';
 import { DbServiceBase } from '../../db/db-service-base';

@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FretboardComponent } from './fretboard/fretboard.component';
-import { OctaveShapesService } from './db/octave-shapes.service';
-import { ChordsService } from './db/chords.service';
-import { PentatonicService } from './db/pentatonic.service';
-import { ArpeggiosService } from './db/arpeggios.service';
+import { OctaveShapesService } from './shape-page/octave-shapes/octave-shapes.service';
+import { ChordsService } from './shape-page/chords/chords.service';
+import { PentatonicService } from './shape-page/pentatonics/pentatonic.service';
+import { ArpeggiosService } from './shape-page/arpeggios/arpeggios.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PracticeComponent } from './practice/practice.component';
 import { ChordsComponent } from './shape-page/chords/chords.component';
