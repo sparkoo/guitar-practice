@@ -10,11 +10,38 @@ export class ScalesService extends DbServiceBase {
 
   private static initMajorFingers(): any[] {
     const fingers = [];
-    fingers[0] = { 0: ['E', 'a', 'd', 'g', 'e'], 1: ['b'], 2: ['d', 'g'], 3: ['E', 'a', 'b', 'e'] };
-    fingers[1] = { 0: ['d', 'g'], 1: ['E', 'a', 'b', 'e'], 3: ['E', 'a', 'd', 'g', 'b', 'e'] };
-    fingers[2] = { 1: ['E', 'a', 'd', 'g', 'b', 'e'], 3: ['a', 'd', 'g'], 4: ['E', 'b', 'e'] };
-    fingers[3] = { 0: ['a', 'd', 'g'], 1: ['E', 'b', 'e'], 2: ['g'], 3: ['E', 'a', 'd', 'b', 'e'] };
-    fingers[4] = { 0: ['g'], 1: ['E', 'a', 'd', 'b', 'e'], 3: ['E', 'a', 'd', 'g', 'e'], 4: ['b'] };
+    fingers[0] = {
+      0: ['E', 'a', 'd', 'g', 'b', 'e'],
+      1: ['E', 'b', 'e'],
+      2: ['a', 'd', 'g'],
+      3: ['E', 'a', 'd', 'b', 'e']
+    };
+    fingers[1] = {
+      0: ['a', 'd', 'g'],
+      1: ['E', 'a', 'd', 'b', 'e'],
+      2: ['g'],
+      3: ['E', 'a', 'd', 'g', 'b', 'e'],
+      4: ['b']
+    };
+    fingers[2] = {
+      0: ['g'],
+      1: ['E', 'a', 'd', 'g', 'b', 'e'],
+      2: ['b'],
+      3: ['E', 'a', 'd', 'g', 'e'],
+      4: ['E', 'a', 'b', 'e']
+    };
+    fingers[3] = {
+      0: ['E', 'a', 'd', 'g', 'e'],
+      1: ['E', 'a', 'b', 'e'],
+      2: ['d', 'g'],
+      3: ['E', 'a', 'd', 'g', 'b', 'e']
+    };
+    fingers[4] = {
+      0: ['d', 'g'],
+      1: ['E', 'a', 'd', 'g', 'b', 'e'],
+      3: ['E', 'a', 'd', 'g', 'b', 'e'],
+      4: ['E', 'b', 'e']
+    };
     return fingers;
   }
 
