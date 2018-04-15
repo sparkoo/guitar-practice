@@ -6,6 +6,7 @@ import { DbServiceBase } from '../db/db-service-base';
 import { ChordsService } from '../shape-page/chords/chords.service';
 import { OctaveShapesService } from '../shape-page/octave-shapes/octave-shapes.service';
 import { PentatonicService } from '../shape-page/pentatonics/pentatonic.service';
+import { ScalesService } from '../shape-page/scales/scales.service';
 
 @Component({
   selector: 'app-practice',
@@ -24,13 +25,15 @@ export class PracticeComponent extends ShapeBaseComponent {
               private chordsService: ChordsService,
               private arpeggiosService: ArpeggiosService,
               private octaveShapesService: OctaveShapesService,
-              private pentatonicsService: PentatonicService) {
+              private pentatonicsService: PentatonicService,
+              private scalesService: ScalesService) {
     super(selectionService);
     this.typeDatabases = {
       'Octave Shape': this.octaveShapesService,
       'Chord': this.chordsService,
       'Pentatonic': this.pentatonicsService,
-      'Arpeggio': this.arpeggiosService
+      'Arpeggio': this.arpeggiosService,
+      'Scales': this.scalesService
     };
     this.types = Object.keys(this.typeDatabases);
     this.databases = Object.values(this.typeDatabases);
