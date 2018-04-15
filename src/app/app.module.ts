@@ -15,6 +15,8 @@ import { OctaveShapesComponent } from './shape-page/octave-shapes/octave-shapes.
 import { ArpeggiosComponent } from './shape-page/arpeggios/arpeggios.component';
 import { PentatonicsComponent } from './shape-page/pentatonics/pentatonics.component';
 import { SelectionService } from './shape-page/selection.service';
+import { ScalesComponent } from './shape-page/scales/scales.component';
+import { ScalesService } from './shape-page/scales/scales.service';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { SelectionService } from './shape-page/selection.service';
     ChordsComponent,
     OctaveShapesComponent,
     ArpeggiosComponent,
-    PentatonicsComponent
+    PentatonicsComponent,
+    ScalesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { SelectionService } from './shape-page/selection.service';
     ChordsService,
     PentatonicService,
     ArpeggiosService,
-    SelectionService
+    SelectionService,
+    ScalesService
   ],
   bootstrap: [AppComponent]
 })
