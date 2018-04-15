@@ -13,7 +13,7 @@ export abstract class DbServiceBase implements DbServiceInterface {
 
   protected readonly data = {};
 
-  protected constructor(frets: number = 5) {
+  protected constructor(frets: number = 6) {
     this.data = this.generateShapes(frets);
   }
 

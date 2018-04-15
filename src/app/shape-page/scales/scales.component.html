@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-2">
+    <h3>Fretboard</h3>
+    <app-fretboard [shape]="shape"></app-fretboard>
+  </div>
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-2">
+    <h3>Tone</h3>
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let tone of tones"
+          [ngClass]="{'active': ToneUp[tone] === selection.tone}"
+          (click)="selectTone(ToneUp[tone])">
+        {{ToneUp[tone].name}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-2">
+    <h3>Shape #</h3>
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let shapeNo of ShapeNo"
+          [ngClass]="{'active': shapeNo === selection.shapeNo}"
+          (click)="selectShapeNo(shapeNo)">
+        {{shapeNo}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-2">
+    <h3>Tonality</h3>
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let tonality of TonalityKeys"
+          [ngClass]="{'active': Tonality[tonality] === selection.tonality}"
+          (click)="selectTonality(Tonality[tonality])">
+        {{tonality}}
+      </li>
+    </ul>
+  </div>
+</div>

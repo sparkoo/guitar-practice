@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ShapeBaseComponent } from '../shape-base.component';
-import { ArpeggiosService } from '../../db/arpeggios.service';
+import { ArpeggiosService } from './arpeggios.service';
 import { SelectionService } from '../selection.service';
 import { DbServiceBase } from '../../db/db-service-base';
 
