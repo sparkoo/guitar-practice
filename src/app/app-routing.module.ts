@@ -5,6 +5,7 @@ import { OctaveShapesComponent } from './shape-page/octave-shapes/octave-shapes.
 import { ChordsComponent } from './shape-page/chords/chords.component';
 import { PentatonicsComponent } from './shape-page/pentatonics/pentatonics.component';
 import { ArpeggiosComponent } from './shape-page/arpeggios/arpeggios.component';
+import { ScalesComponent } from './shape-page/scales/scales.component';
 
 const routes: Routes = [
   { path: '', component: PracticeComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'octaveShapes', component: OctaveShapesComponent },
   { path: 'chords', component: ChordsComponent },
   { path: 'pentatonics', component: PentatonicsComponent },
-  { path: 'arpeggios', component: ArpeggiosComponent }
+  { path: 'arpeggios', component: ArpeggiosComponent },
+  { path: 'scales', component: ScalesComponent }
 ];
 
 @NgModule({
@@ -21,4 +23,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
