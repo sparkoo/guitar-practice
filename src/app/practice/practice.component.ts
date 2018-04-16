@@ -21,6 +21,13 @@ export class PracticeComponent extends ShapeBaseComponent {
   selectedType: string;
   showFretboard: boolean;
 
+  locks = {
+    type: { name: 'type', lock: false },
+    tone: { name: 'tone', lock: false },
+    shapeNo: { name: 'shapeNo', lock: false },
+    tonality: { name: 'tonality', lock: false }
+  };
+
   constructor(private selectionService: SelectionService,
               private chordsService: ChordsService,
               private arpeggiosService: ArpeggiosService,
@@ -40,21 +47,31 @@ export class PracticeComponent extends ShapeBaseComponent {
     this.selectedType = this.types[1];
   }
 
+  private static getRandomElementFromArray(array: any[]) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+  private static getRandomElementFromObject(object: Object) {
+    return object[Object.keys(object)[Math.floor(Math.random() * Object.keys(object).length)]];
+  }
+
   getDbService(): DbServiceBase {
-    console.log(this.selectedType);
-    console.log(this.typeDatabases[this.selectedType]);
     return this.typeDatabases[this.selectedType];
   }
 
   randomizeSelection() {
-    const randomTone = this.getRandomElementFromObject(this.ToneUp);
-    const randomShapeNo = this.getRandomElementFromArray(this.ShapeNo);
-    const randomTonality = this.getRandomElementFromObject(this.Tonality);
-    const randomType = this.getRandomElementFromArray(this.types);
-    this.selectionService.selectTone(randomTone);
-    this.selectionService.selectShapeNo(randomShapeNo);
-    this.selectionService.selectTonality(randomTonality);
-    this.selectedType = randomType;
+    if (!this.locks.type.lock) {
+      this.selectedType = PracticeComponent.getRandomElementFromArray(this.types);
+    }
+    if (!this.locks.tone.lock) {
+      this.selectionService.selectTone(PracticeComponent.getRandomElementFromObject(this.ToneUp));
+    }
+    if (!this.locks.shapeNo.lock) {
+      this.selectionService.selectShapeNo(PracticeComponent.getRandomElementFromArray(this.ShapeNo));
+    }
+    if (!this.locks.tonality.lock) {
+      this.selectionService.selectTonality(PracticeComponent.getRandomElementFromObject(this.Tonality));
+    }
     this.drawShape();
   }
 
@@ -63,15 +80,11 @@ export class PracticeComponent extends ShapeBaseComponent {
     this.drawShape();
   }
 
-  getRandomElementFromArray(array: any[]) {
-    return array[Math.floor(Math.random() * array.length)];
-  }
-
-  getRandomElementFromObject(object: Object) {
-    return object[Object.keys(object)[Math.floor(Math.random() * Object.keys(object).length)]];
-  }
-
   toggleFretboard() {
     this.showFretboard = !this.showFretboard;
+  }
+
+  toggleLock(type: { name: string, lock: boolean }) {
+    this.locks[type.name].lock = !type.lock;
   }
 }
