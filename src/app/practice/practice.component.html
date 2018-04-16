@@ -19,10 +19,14 @@
   </div>
   <div class="col-md-2">
     <h3>Type</h3>
+    <button class="btn btn-sm btn-outline-dark" style="cursor: pointer;" (click)="toggleLock(locks.type)">
+      <i class="fa fa-lock" aria-hidden="true"></i>
+    </button>
+    <hr>
     <ul class="list-group">
       <li class="list-group-item"
           *ngFor="let type of types"
-          [ngClass]="{'active': type === selectedType}"
+          [ngClass]="{'active': type === selectedType, 'lock': locks.type.lock === true}"
           (click)="selectType(type)">
         {{type}}
       </li>
@@ -30,10 +34,14 @@
   </div>
   <div class="col-md-2">
     <h3>Tone</h3>
+    <button class="btn btn-sm btn-outline-dark" style="cursor: pointer;" (click)="toggleLock(locks.tone)">
+      <i class="fa fa-lock" aria-hidden="true"></i>
+    </button>
+    <hr>
     <ul class="list-group">
       <li class="list-group-item"
           *ngFor="let tone of tones"
-          [ngClass]="{'active': ToneUp[tone] === selection.tone}"
+          [ngClass]="{'active': ToneUp[tone] === selection.tone, 'lock': locks.tone.lock === true}"
           (click)="selectTone(ToneUp[tone])">
         {{ToneUp[tone].name}}
       </li>
@@ -41,10 +49,14 @@
   </div>
   <div class="col-md-2">
     <h3>Shape #</h3>
+    <button class="btn btn-sm btn-outline-dark" style="cursor: pointer;" (click)="toggleLock(locks.shapeNo)">
+      <i class="fa fa-lock" aria-hidden="true"></i>
+    </button>
+    <hr>
     <ul class="list-group">
       <li class="list-group-item"
           *ngFor="let shapeNo of ShapeNo"
-          [ngClass]="{'active': shapeNo === selection.shapeNo}"
+          [ngClass]="{'active': shapeNo === selection.shapeNo, 'lock': locks.shapeNo.lock === true}"
           (click)="selectShapeNo(shapeNo)">
         {{shapeNo}}
       </li>
@@ -52,10 +64,14 @@
   </div>
   <div class="col-md-2">
     <h3>Tonality</h3>
+    <button class="btn btn-sm btn-outline-dark" style="cursor: pointer;" (click)="toggleLock(locks.tonality)">
+      <i class="fa fa-lock" aria-hidden="true"></i>
+    </button>
+    <hr>
     <ul class="list-group">
       <li class="list-group-item"
           *ngFor="let tonality of TonalityKeys"
-          [ngClass]="{'active': Tonality[tonality] === selection.tonality}"
+          [ngClass]="{'active': Tonality[tonality] === selection.tonality, 'lock': locks.tonality.lock === true}"
           (click)="selectTonality(Tonality[tonality])">
         {{tonality}}
       </li>
