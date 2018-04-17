@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PentatonicsComponent } from './pentatonics.component';
+import { SelectionService } from '../selection.service';
+import { FretboardComponent } from '../../fretboard/fretboard.component';
+import { PentatonicService } from './pentatonic.service';
 
 describe('PentatonicsComponent', () => {
   let component: PentatonicsComponent;
@@ -8,9 +11,10 @@ describe('PentatonicsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PentatonicsComponent ]
+      declarations: [PentatonicsComponent, FretboardComponent],
+      providers: [SelectionService, PentatonicService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

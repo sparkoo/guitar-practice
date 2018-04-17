@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScalesComponent } from './scales.component';
+import { SelectionService } from '../selection.service';
+import { FretboardComponent } from '../../fretboard/fretboard.component';
+import { ScalesService } from './scales.service';
 
 describe('ScalesComponent', () => {
   let component: ScalesComponent;
@@ -8,9 +11,10 @@ describe('ScalesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScalesComponent ]
+      declarations: [ScalesComponent, FretboardComponent],
+      providers: [SelectionService, ScalesService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

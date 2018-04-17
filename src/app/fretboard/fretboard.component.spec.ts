@@ -8,14 +8,15 @@ describe('FretboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FretboardComponent ]
+      declarations: [FretboardComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FretboardComponent);
     component = fixture.componentInstance;
+    component.shape = { frets: 1, base: 1, fingers: { 1: ['e'] } };
     fixture.detectChanges();
   });
 
