@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DbServiceBase } from '../../db/db-service-base';
+import { DbServiceBase } from './db-service-base';
 
 /**
  * query keys are in format

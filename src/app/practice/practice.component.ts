@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ShapeBaseComponent } from '../shape-page/shape-base.component';
-import { ArpeggiosService } from '../shape-page/arpeggios/arpeggios.service';
+import { ArpeggiosService } from '../db/arpeggios.service';
 import { SelectionService } from '../shape-page/selection.service';
 import { DbServiceBase } from '../db/db-service-base';
-import { ChordsService } from '../shape-page/chords/chords.service';
-import { OctaveShapesService } from '../shape-page/octave-shapes/octave-shapes.service';
-import { PentatonicService } from '../shape-page/pentatonics/pentatonic.service';
-import { ScalesService } from '../shape-page/scales/scales.service';
+import { ChordsService } from '../db/chords.service';
+import { OctaveShapesService } from '../db/octave-shapes.service';
+import { PentatonicService } from '../db/pentatonic.service';
+import { ScalesService } from '../db/scales.service';
 
 @Component({
   selector: 'app-practice',
@@ -19,7 +19,7 @@ export class PracticeComponent extends ShapeBaseComponent {
   typeDatabases: {};
   types: string[];
   selectedType: string;
-  showFretboard: boolean;
+  showFretboard = true;
 
   locks = {
     type: { name: 'type', lock: false },
@@ -44,7 +44,7 @@ export class PracticeComponent extends ShapeBaseComponent {
     };
     this.types = Object.keys(this.typeDatabases);
     this.databases = Object.values(this.typeDatabases);
-    this.selectedType = this.types[1];
+    this.selectedType = this.types[0];
   }
 
   private static getRandomElementFromArray(array: any[]) {

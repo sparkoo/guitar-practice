@@ -9,8 +9,6 @@
 </div>
 <hr/>
 <div class="row">
-  <div class="col-md-1">
-  </div>
   <div class="col-md-2">
     <h3>Fretboard</h3>
     <app-fretboard [shape]="shape" *ngIf="showFretboard"></app-fretboard>
@@ -18,7 +16,7 @@
   <div class="col-md-1">
   </div>
   <div class="col-md-2">
-    <h3>Type</h3>
+    <h5>Type</h5>
     <button class="btn btn-sm btn-outline-dark" style="cursor: pointer;" (click)="toggleLock(locks.type)">
       <i class="fa fa-lock" aria-hidden="true"></i>
     </button>
@@ -32,8 +30,8 @@
       </li>
     </ul>
   </div>
-  <div class="col-md-2">
-    <h3>Tone</h3>
+  <div class="col-md-1">
+    <h5>Tone</h5>
     <button class="btn btn-sm btn-outline-dark" style="cursor: pointer;" (click)="toggleLock(locks.tone)">
       <i class="fa fa-lock" aria-hidden="true"></i>
     </button>
@@ -47,8 +45,8 @@
       </li>
     </ul>
   </div>
-  <div class="col-md-2">
-    <h3>Shape #</h3>
+  <div class="col-md-1">
+    <h5>#shape</h5>
     <button class="btn btn-sm btn-outline-dark" style="cursor: pointer;" (click)="toggleLock(locks.shapeNo)">
       <i class="fa fa-lock" aria-hidden="true"></i>
     </button>
@@ -63,7 +61,7 @@
     </ul>
   </div>
   <div class="col-md-2">
-    <h3>Tonality</h3>
+    <h5>Tonality</h5>
     <button class="btn btn-sm btn-outline-dark" style="cursor: pointer;" (click)="toggleLock(locks.tonality)">
       <i class="fa fa-lock" aria-hidden="true"></i>
     </button>
