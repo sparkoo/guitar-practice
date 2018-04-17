@@ -14,4 +14,5 @@ before_script:
   - sleep 5 # give xvfb some time to start
 
 script:
+  - ng test --single-run
   - ng build --aot -prod
