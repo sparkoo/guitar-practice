@@ -19,7 +19,7 @@ export class PracticeComponent extends ShapeBaseComponent {
   typeDatabases: {};
   types: string[];
   selectedType: string;
-  showFretboard: boolean;
+  showFretboard = true;
 
   locks = {
     type: { name: 'type', lock: false },
@@ -44,7 +44,7 @@ export class PracticeComponent extends ShapeBaseComponent {
     };
     this.types = Object.keys(this.typeDatabases);
     this.databases = Object.values(this.typeDatabases);
-    this.selectedType = this.types[1];
+    this.selectedType = this.types[0];
   }
 
   private static getRandomElementFromArray(array: any[]) {
