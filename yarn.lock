@@ -69,10 +69,10 @@
     uuid "8.3.2"
     yargs "17.4.1"
 
-"@angular/common@^14.0.1":
-  version "14.0.1"
-  resolved "https://registry.npmjs.org/@angular/common/-/common-14.0.1.tgz"
-  integrity sha512-6yT95daze55H0KLag+LgQQMGV7jGy3ggcdIEEU9H+cM4rp37kz97RNGaig5p34c1f/VMg6LaDXOK4LjAebbnBw==
+"@angular/common@^20.3.25":
+  version "20.3.25"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-20.3.25.tgz#0f2bd058ec6595cfb4dd6a05601c41cb5cf3cb23"
+  integrity sha512-rnRGcXbjet0DHgkRL4Dqxk21G2T4UypVfiTV/fay58H8w9U89PJ1L6gRmk8B/uyfpii/9r23cBwnpcguQykxYw==
   dependencies:
     tslib "^2.3.0"
 
